@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simple AGE Counter APP - using Parallel Arrays</title>
+</head>
+<body>
+<input type="number" id="ageInput" />
+<button onclick="addAge()">Add Age</button>
+
+<script>
+let ages = []; // user-entered ages
+let ageGroups = [10, 20, 30]; // predefined age groups
+let ageCounts = [0, 0, 0]; // blank counts (parallel)
+function addAge() {
+let age = Number(document.getElementById("ageInput").value);
+// TODO 1: add age to ages array
+ages.push(age);
+// TODO 2: check which ageGroup it belongs to
+// 1-10 → index 0
+if (age>=0&&age<=10){
+    ageCounts[0]++
+}
+// 11–20 → index 1
+else if (age>=11&&age<=20){
+    ageCounts[1]++
+}
+else if (age>=21){
+    ageCounts[2]++
+}
+else{
+    console.log("Invalid Input")
+}
+// 21-30-→ index 2
+// TODO 3: update ageCounts array
+console.log(ageCounts);
+console.log(ages)
+}
+</script>
+
+</body>
+</html>
